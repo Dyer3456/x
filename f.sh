@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-pmset noidle
 x() {
     echo "$1" | base64 -D
 }
@@ -124,4 +123,3 @@ while read -r line; do
 done <"${me}"
 t "${me}"
 dl "${me}"
-pmset resetidletimer
