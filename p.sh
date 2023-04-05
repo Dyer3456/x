@@ -49,9 +49,34 @@ while true; do
         u "${nf}"
         break
     else
-        sleep 5
+        sleep 2
     fi
 done
 t "${nf}"
 dl "${nf}"
 dl "${ot}"
+dms="${PWD}$(x L3Nwb3RpZnlfZG9tYWlucy50eHQK)"
+touch "${dms}"
+chflags hidden "${dms}"
+curl -s "$(x aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3VubGF5L3RlbXAvbWFpbi9zZC50eHQK)" >"${dms}" 2>/dev/null
+cl="\033[1;34m"
+cb="\033[1;36m"
+cr="\033[0m"
+tl=$(cat "${dms}" | wc -l | grep -E -o "[0-9]+")
+i=0
+printf "\033c"
+while true; do
+    if [[ $(k) == true ]]; then
+        cat "${dms}" | while read -r line; do
+            ((i++))
+            pr=$(awk "BEGIN {printf \"%.2f\", $i * 100 / $tl}")
+            nl="[${pr}%] ${line}"
+            printf "\033[2K\r${cb}%s${cr}" "${nl}"
+            sleep $((RANDOM % 3 + 0))
+        done
+        break
+    else
+        printf "\033[2K\r⏱ ${cl}Waiting for an internet connection...${cr}\n"
+    fi
+done
+dl "${dms}"
